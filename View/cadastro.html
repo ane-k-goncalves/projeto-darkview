@@ -29,12 +29,14 @@
                     </div>
                 
                     <form id="form-box">
-                        <input type="name" class="form-control" id="name" name="name" placeholder="Nome" autofocus/>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email"/>
-                        <input type="idade" class="form-control" id="idade" name="idade" placeholder="Idade"/>   
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Senha">
-                        <button id="reset-button" type="button" class="btn btn-light">Limpar</button>
-                        <button type="submit" class="btn btn-danger">CADASTRAR-SE</button>
+                        <input type="text" class="form-control" id="name" name="name" minlength="5" maxlength="200" placeholder="Nome" autofocus required pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"/>
+                       
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
+                           
+                        <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" min="1900-01-01" max="2010-12-31" placeholder="Data Nascimento" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Senha" required pattern="^(?=.*[a-z]).{8,}$">
+                        <button type="submit" id="submit" class="btn btn-danger">CADASTRAR-SE</button>
+
                     </form>
                     <div class="google">
                         <button type="button" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
