@@ -51,7 +51,6 @@ button {
     justify-content: center;
 }
 
-
 .cadastro {
     width: 600px;
     height: 500px;
@@ -82,10 +81,10 @@ h2 {
 }
 
 .card {
-    margin: 40px;
-    
-}
+    background-color: #212529;
 
+}
+  --#{$prefix}card-color: #{$card-color};
 
 
 
