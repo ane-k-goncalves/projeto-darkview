@@ -1,29 +1,77 @@
-import { User } from '../app/user.js';
 
-(function () {
-    document.querySelector('#reset-button')
-    .addEventListener('click',function() {
-        let formInputs = document.querySelectorAll('input');
-        for (let element of formInputs){
-            element.value = '';
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('form-box');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const ageInput = document.getElementById('idade');
+    const nameError = document.getElementById('nameError');
+    const emailError = document.getElementById('emailError');
+    const ageError = document.getElementById('ageError');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function (event) {
+        let valid = true;
+        
+        // Validar nome
+        if (!nameInput.validity.valid) {
+            nameError.textContent = getErrorMessage(nameInput);
+            nameError.style.display = 'block';
+            valid = false;
+        } else {
+            nameError.textContent = '';
+            nameError.style.display = 'none';
+        }
+
+        // Validar email
+        if (!emailInput.validity.valid) {
+            emailError.textContent = getErrorMessage(emailInput);
+            emailError.style.display = 'block';
+            valid = false;
+        } else {
+            emailError.textContent = '';
+            emailError.style.display = 'none';
+        }
+
+        // Validar idade
+        if (!ageInput.validity.valid) {
+            ageError.textContent = getErrorMessage(ageInput);
+            ageError.style.display = 'block';
+            valid = false;
+        } else {
+            ageError.textContent = '';
+            ageError.style.display = 'none';
+        }
+
+        if (!valid) {
+            event.preventDefault();
+        } else {
+            successMessage.textContent = 'Formulário enviado com sucesso!';
+            successMessage.style.display = 'block';
+            event.preventDefault(); // Remova esta linha quando quiser enviar o formulário para o servidor
         }
     });
 
-    document.getElementById('submit').onsubmit = function (event) {
-        event.preventDefault();
-
-        let name = document.getElementById('form-box').elements['name'].value;
-        let email = document.getElementById('#email').value;
-        let idade = document.getElementById('#idade').value;
-
-        let user = new User(name, email, idade);
-
-        document.querySelector('#span-name').innerHTML = <strong>{ user.name } </strong>;
-        document.querySelector('#span-email').textContent =  <strong>{ user.email } </strong>;
-        document.querySelector('#span-idade').textContent =  <strong>{ user.idade } </strong>;
-
+    function getErrorMessage(input) {
+        if (input.validity.valueMissing) {
+            return 'Este campo é obrigatório.';
+        }
+        if (input.validity.typeMismatch) {
+            return 'Por favor, insira um valor válido.';
+        }
+        if (input.validity.tooShort) {
+            return `Deve ter pelo menos ${input.minLength} caracteres.`;
+        }
+        if (input.validity.tooLong) {
+            return `Deve ter no máximo ${input.maxLength} caracteres.`;
+        }
+        if (input.validity.rangeUnderflow) {
+            return `O valor deve ser no mínimo ${input.min}.`;
+        }
+        if (input.validity.rangeOverflow) {
+            return `O valor deve ser no máximo ${input.max}.`;
+        }
+        return 'Valor inválido.';
     }
-
-
-})();
+});
 
