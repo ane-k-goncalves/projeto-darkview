@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form-box');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
-    const ageInput = document.getElementById('idade');
+    const ageInput = document.getElementById('age');
     const nameError = document.getElementById('nameError');
     const emailError = document.getElementById('emailError');
     const ageError = document.getElementById('ageError');
@@ -75,53 +75,52 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const apiKey = '674b6081f99f69c9f78db42b04a1f987';
-    const baseUrl = 'https://api.themoviedb.org/3';
-    const movieId = 550; // ID do filme (Clube da Luta)
 
-    async function getMovieDetails(movieId) {
-        const url = `${baseUrl}/movie/${movieId}?api_key=${apiKey}&language=pt-BR`;
+class User {
+    constructor(name, email, idade, password) {
+        this.name = name;
+        this.email = email;
+        this.idade = idade;
+        this.password = password;
+    }
+}
 
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            console.error('Erro ao buscar detalhes do filme:', error);
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('form-box');
+    const resetButton = document.getElementById('reset-button');
+    const spanName = document.getElementById('name');
+    const spanEmail = document.getElementById('email');
+    const spanIdade = document.getElementById('age');
+
+    // Recuperar e exibir dados do localStorage ao carregar a página
+    function displayUserData() {
+        const storedUser = localStorage.getItem('user');
+        if (storedUser) {
+            const user = JSON.parse(storedUser);
+            spanName.textContent = user.name;
+            spanEmail.textContent = user.email;
+            spanIdade.textContent = user.idade;
         }
     }
+    displayUserData();
 
-    function populateCard(movie) {
-        document.getElementById('movie-poster').src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-        document.getElementById('movie-poster').alt = movie.title;
-        document.getElementById('movie-title').textContent = movie.title;
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-        const genres = movie.genres.map(genre => genre.name).join(', ');
-        const duration = `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m`;
-        const directors = movie.credits.crew.filter(member => member.job === 'Director').map(director => director.name).join(', ');
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const idade = document.getElementById('age').value;
+        const password = document.getElementById('password').value;
 
-        document.getElementById('movie-details').innerHTML = `
-            Data Lançamento: ${movie.release_date} <br>
-            Gênero: ${genres} <br>
-            Duração: ${duration} <br>
-            Direção: ${directors} <br>
-        `;
+        const user = new User(name, email, idade, password);
 
-        document.getElementById('movie-link').href = `https://www.themoviedb.org/movie/${movie.id}`;
-    }
+        // Armazenar dados no localStorage
+        localStorage.setItem('user', JSON.stringify(user));
 
-    getMovieDetails(movieId).then(movie => {
-        // Requisição para obter os créditos do filme (diretor, elenco, etc.)
-        const creditsUrl = `${baseUrl}/movie/${movieId}/credits?api_key=${apiKey}`;
-        fetch(creditsUrl)
-            .then(response => response.json())
-            .then(credits => {
-                movie.credits = credits;
-                populateCard(movie);
-            });
+        // Exibir dados
+        spanName.textContent = user.nome;
+        spanEmail.textContent = user.email;
+        spanIdade.textContent = user.idade;
     });
+
 });
