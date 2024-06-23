@@ -1,7 +1,8 @@
 # DARKVIEW sinopse de filmes
 Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web...
 
-
+# Link do Vídeo 
+https://drive.google.com/file/d/1SBbrlv_Lup3A-fX_x21nvHyqAaNQd73f/view?usp=drive_link
 
 ## Endereço de Deploy - GitHub Pages
 
