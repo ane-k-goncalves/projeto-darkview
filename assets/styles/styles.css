@@ -4,6 +4,7 @@ html, body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #030b13;
   
 }
 
@@ -62,8 +63,6 @@ button {
 
 h2 {
     color: #DEE0E1;
-   
-
 }
 
 
@@ -105,6 +104,7 @@ h2 {
 }
 
 .cadastro {
+    
     background-color: #f5f7fa 80%;
     border: 1px solid #212529;
     border-radius: 10px;
@@ -116,6 +116,13 @@ h2 {
     flex-direction: column;
     
 }
+#form-login {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 268px;
+    justify-content: center;
+}
 
 #form-box {
     margin: 30px;
@@ -125,11 +132,12 @@ h2 {
 }
 
 #form-box input {
+    
     display: flex;
     font-size: 12px;
     padding: 12px 9px;
     background-color:  #f5f7fa 80%;
-    border: 1px solid #212529;
+    border: 1px solid #815d5d;
     width: 268px;
     margin: 5px auto;
     border-radius: 5px;
@@ -138,7 +146,7 @@ h2 {
 #form-box input[type="submit"]{
     background-color:  #f5f7fa 80%;
     color: black;
-    margin-top: 15px;
+    margin: 15px;
     border-radius: 5px;
     height: 30px;
     border-color: #f5f7fa;
@@ -146,6 +154,9 @@ h2 {
     padding: 0;
     font-weight: bold;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+
     
 }
 
@@ -155,7 +166,7 @@ h2 {
     background-position: center;
     position: relative;
     width: 100%;
-    height: 80rem;
+    height: 70rem;
 }
 
 .main-banner2 {
@@ -164,7 +175,7 @@ h2 {
     background-position: center;
     position: relative;
     width: 100%;
-    height: 1500rem;
+    height: 500rem;
 }
 
 
@@ -180,10 +191,7 @@ h2 {
     border-radius: 5px; 
 }
 
-.slide {
-    background-color: rgba(0,0,0, 0.4);
-    
-}
+
 
 .slide h2{
     color: #ffffff;
@@ -238,3 +246,48 @@ h2 {
 }
 
 
+.container-fluid {
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.card-title {
+    color: #ffffff;
+}
+
+
+.btn a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.nab-link a {
+    color: red;
+    text-decoration: none;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    justify-items:flex-end;
+}
+
+.error {
+    color: red;
+    display: none;
+}
+.success {
+    color: green;
+    display: none;
+}
+
+#form-login input {
+    margin-bottom: 10px;;
+}
+
+.google .a {
+    color: #030b13;
+}

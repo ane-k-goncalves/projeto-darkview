@@ -55,25 +55,29 @@ document.addEventListener('DOMContentLoaded', function() {
         const directors = credits.crew.filter(member => member.job === 'Director').map(director => director.name).join(', ');
 
         const cardHTML = `
-            <div class="col-sm-4">
-                <div class="card mb-3 h-100">
-                    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top img-fluid rounded-start" alt="${movie.title}">
-                    <div class="card-body">
-                        <h5 class="card-title">${movie.title}</h5>
-                        <p class="card-text">
-                            Data Lançamento: ${movie.release_date} <br>
-                            Gênero: ${genres} <br>
-                            Duração: ${duration} <br>
-                            Direção: ${directors} <br>
-                        </p>
-                        <a class="btn btn-danger" href="https://www.themoviedb.org/movie/${movie.id}" role="button">Ver mais</a>
+    
+                    <div class="card md-3 h-100" style="width: 25rem; margin: 20px;">
+                        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top img-fluid rounded-start" alt="${movie.title}">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: white">${movie.title}</h5>
+                            <p class="card-text">
+                                Data Lançamento: ${movie.release_date} <br>
+                                Gênero: ${genres} <br>
+                                Duração: ${duration} <br>
+                                Direção: ${directors} <br>
+                            </p>
+                                <a class="btn btn-danger" href="https://www.themoviedb.org/movie/${movie.id}" role="button">Ver mais</a>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="red" class="bi bi-heart" viewBox="0 0 16 16">
+                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+                                </svg>
+                        </div>
                     </div>
-                </div>
-            </div>
+            
         `;
 
-        const cardElement = document.createElement('div');
+        const cardElement = document.createElement('movies');
         cardElement.innerHTML = cardHTML;
+        cardElement.className =  'col-lg-4 col-md-6 col-sm-12 mb-3';
         container.appendChild(cardElement);
     }
 
