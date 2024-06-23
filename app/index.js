@@ -1,18 +1,19 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-box');
+    const form = document.getElementById('form-login');
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const ageInput = document.getElementById('age');
+    const passwordInput = document.getElementById('password');
     const nameError = document.getElementById('nameError');
     const emailError = document.getElementById('emailError');
     const ageError = document.getElementById('ageError');
+    const passwordError = document.getElementById('passwordError');
     const successMessage = document.getElementById('successMessage');
 
     form.addEventListener('submit', function (event) {
+        event.preventDefault();
         let valid = true;
-        
+
         // Validar nome
         if (!nameInput.validity.valid) {
             nameError.textContent = getErrorMessage(nameInput);
@@ -43,12 +44,35 @@ document.addEventListener('DOMContentLoaded', function () {
             ageError.style.display = 'none';
         }
 
-        if (!valid) {
-            event.preventDefault();
+        // Validar senha
+        if (!passwordInput.validity.valid) {
+            passwordError.textContent = getErrorMessage(passwordInput);
+            passwordError.style.display = 'block';
+            valid = false;
         } else {
-            successMessage.textContent = 'Formulário enviado com sucesso!';
+            passwordError.textContent = '';
+            passwordError.style.display = 'none';
+        }
+
+        if (valid) {
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const idade = ageInput.value;
+            const password = passwordInput.value;
+
+            const user = {
+                nome: name,
+                email: email,
+                idade: idade,
+                senha: password
+            };
+
+            localStorage.setItem('user', JSON.stringify(user));
+
+            saveToServer(user);
+
+            successMessage.textContent = 'Dados salvos com sucesso!';
             successMessage.style.display = 'block';
-            event.preventDefault(); // Remova esta linha quando quiser enviar o formulário para o servidor
         }
     });
 
@@ -73,54 +97,24 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return 'Valor inválido.';
     }
-});
 
-
-class User {
-    constructor(name, email, idade, password) {
-        this.name = name;
-        this.email = email;
-        this.idade = idade;
-        this.password = password;
+    function saveToServer(user) {
+        fetch('http://localhost:3000/users', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Dados salvos no servidor!');
+            } else {
+                console.error('Erro ao salvar dados no servidor.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao salvar dados no servidor:', error);
+        });
     }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-box');
-    const resetButton = document.getElementById('reset-button');
-    const spanName = document.getElementById('name');
-    const spanEmail = document.getElementById('email');
-    const spanIdade = document.getElementById('age');
-
-    // Recuperar e exibir dados do localStorage ao carregar a página
-    function displayUserData() {
-        const storedUser = localStorage.getItem('user');
-        if (storedUser) {
-            const user = JSON.parse(storedUser);
-            spanName.textContent = user.name;
-            spanEmail.textContent = user.email;
-            spanIdade.textContent = user.idade;
-        }
-    }
-    displayUserData();
-
-    form.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const idade = document.getElementById('age').value;
-        const password = document.getElementById('password').value;
-
-        const user = new User(name, email, idade, password);
-
-        // Armazenar dados no localStorage
-        localStorage.setItem('user', JSON.stringify(user));
-
-        // Exibir dados
-        spanName.textContent = user.nome;
-        spanEmail.textContent = user.email;
-        spanIdade.textContent = user.idade;
-    });
-
 });

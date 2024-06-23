@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const loginForm = document.getElementById('form-login');
-    const loginMessage = document.getElementById('successMessage');
+    const loginForm = document.getElementById('login-form');
+    const loginMessage = document.getElementById('login-message');
 
     loginForm.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
 
         const storedUser = localStorage.getItem('user');
         if (storedUser) {
