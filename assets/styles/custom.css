@@ -11848,4 +11848,24 @@ textarea.form-control-lg {
   background-color: #212529;
 }
 
+.space {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-custom {
+  background-color: #000; /* Cor de fundo preta */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 16rem;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar {
+    height: 16rem;
+  }
+}
+
 /*# sourceMappingURL=custom.css.map */

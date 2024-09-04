@@ -13,6 +13,20 @@ $primary: #212529;
 }
 
 
-.btn {
-    background-color: red;
+
+.navbar-custom {
+    background-color: #000; /* Cor de fundo preta */
 }
+
+  @media (max-width: 768px) {
+    .navbar {
+      height: 16rem;
+   
+    }
+  }
+  @media (max-width: 1200px) {
+    .navbar {
+      height: 16rem;
+     
+    }
+  }
