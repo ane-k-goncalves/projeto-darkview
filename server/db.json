@@ -1,4 +1,18 @@
 {
-    "users": []
-  }
-  
+  "users": [
+    {
+      "id": "71f8",
+      "nome": "anedsad",
+      "email": "goncalvesanne961@gmail.com",
+      "idade": "33",
+      "senha": "1132345265"
+    },
+    {
+      "id": "aa31",
+      "nome": "Ane Gonçalves",
+      "email": "goncalvesanne961@gmail.com",
+      "idade": "22",
+      "senha": "123245356456"
+    }
+  ]
+}

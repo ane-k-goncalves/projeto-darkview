@@ -1,5 +1,9 @@
-function saveUser() {
-    const user = document.getElementById('submit').value;
-    localStorage.setItem('user', user);
-    alert('User saved!');
+export default class User {
+    constructor(name, email,idade, senha) {
+        this.name = name;
+        this.email = email;
+        this.idade = idade;
+        this.senha = senha;
+
+    }
 }

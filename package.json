@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "json:server":"json-server --watch server/db.json"
+    "json:server": "json-server --watch server/db.json"
   },
   "dependencies": {
     "axios": "^1.7.2",
@@ -12,7 +12,6 @@
     "requests": "^0.3.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1",
-    "parcel": "^2.12.0"
+    "gh-pages": "^6.1.1"
   }
 }

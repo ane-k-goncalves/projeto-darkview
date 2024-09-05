@@ -14,45 +14,45 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         let valid = true;
 
-        // Validar nome
-        if (!nameInput.validity.valid) {
-            nameError.textContent = getErrorMessage(nameInput);
-            nameError.style.display = 'block';
-            valid = false;
-        } else {
-            nameError.textContent = '';
-            nameError.style.display = 'none';
-        }
+        // // Validar nome
+        // if (!nameInput.validity.valid) {
+        //     nameError.textContent = getErrorMessage(nameInput);
+        //     nameError.style.display = 'block';
+        //     valid = false;
+        // } else {
+        //     nameError.textContent = '';
+        //     nameError.style.display = 'none';
+        // }
 
-        // Validar email
-        if (!emailInput.validity.valid) {
-            emailError.textContent = getErrorMessage(emailInput);
-            emailError.style.display = 'block';
-            valid = false;
-        } else {
-            emailError.textContent = '';
-            emailError.style.display = 'none';
-        }
+        // // Validar email
+        // if (!emailInput.validity.valid) {
+        //     emailError.textContent = getErrorMessage(emailInput);
+        //     emailError.style.display = 'block';
+        //     valid = false;
+        // } else {
+        //     emailError.textContent = '';
+        //     emailError.style.display = 'none';
+        // }
 
-        // Validar idade
-        if (!ageInput.validity.valid) {
-            ageError.textContent = getErrorMessage(ageInput);
-            ageError.style.display = 'block';
-            valid = false;
-        } else {
-            ageError.textContent = '';
-            ageError.style.display = 'none';
-        }
+        // // Validar idade
+        // if (!ageInput.validity.valid) {
+        //     ageError.textContent = getErrorMessage(ageInput);
+        //     ageError.style.display = 'block';
+        //     valid = false;
+        // } else {
+        //     ageError.textContent = '';
+        //     ageError.style.display = 'none';
+        // }
 
-        // Validar senha
-        if (!passwordInput.validity.valid) {
-            passwordError.textContent = getErrorMessage(passwordInput);
-            passwordError.style.display = 'block';
-            valid = false;
-        } else {
-            passwordError.textContent = '';
-            passwordError.style.display = 'none';
-        }
+        // // Validar senha
+        // if (!passwordInput.validity.valid) {
+        //   //  passwordError.textContent = getErrorMessage(passwordInput);
+        //     passwordError.style.display = 'block';
+        //     valid = false;
+        // } else {
+        //     passwordError.textContent = '';
+        //     passwordError.style.display = 'none';
+        // }
 
         if (valid) {
             const name = nameInput.value;
