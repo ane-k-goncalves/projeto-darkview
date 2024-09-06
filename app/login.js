@@ -1,5 +1,4 @@
 
-
     document.addEventListener('submit', function (event) {
         event.preventDefault();
         const loginMessage = document.getElementById('login-message');

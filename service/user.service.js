@@ -21,6 +21,26 @@ export default class UserService {
             return null;
         }
     }
+    async listUsers() {
+        const url = `http://localhost:3000/users`;
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        };
 
+        try {
+            const response = await fetch(url, options);
+            if(!response.ok) {
+                throw new Error (`ERRO HTTP!, ${response.status} `);
+            }
+            return response;
+
+        }catch(error) {
+            console.error(error);
+            return null;
+        }
+    }
     //alterar senha;
 }

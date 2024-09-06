@@ -5,9 +5,10 @@
     <title>Darkview Sinopses de Filmes</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../assets/styles/styles.css">
+    <link rel="stylesheet" href="../../assets/styles/styles.css">
+    <link rel="stylesheet" href="./cadastro.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="../node_modules/bootstrap-icons/bootstrap-icons.svg">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/bootstrap-icons.svg">
     
     
 </head>
@@ -15,7 +16,7 @@
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <img src="../assets/imagens/DARKVIEW.png" alt="Darkview">
+          <img src="../../assets/imagens/DARKVIEW.png" alt="Darkview">
         </div>
     </nav>
     </header>
@@ -28,15 +29,16 @@
                         <br>
                     </div>
                 
-                    <form id="form-login" novalidate>
-                        <input type="name" class="form-control" id="name" name="name" minlength="3" maxlength="50" placeholder="Nome" autofocus pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+"/>
-                        <span class="error" id="nameError"></span>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"/>
-                        <span class="error" id="emailError"></span>
-                        <input type="idade" class="form-control" id="age" name="age" min="1" max="120" placeholder="Idade"/>   
-                        <span class="error" id="ageError"></span>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Senha" pattern="^(?=.*[a-z]).{8,}$">
-                        
+                    <form id="form-login" onsubmit="submitHandler()"   novalidate>
+                        <input type="name" class="form-control" id="name" name="name" minlength="3" maxlength="50" placeholder="Nome" autofocus pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+" required/>
+                        <span class="error" id="nameError">Nome inválido</span>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required/>
+                        <span class="error" id="emailError">Email inválido</span>
+                        <input type="idade" class="form-control" id="age" name="age" min="1" max="120" placeholder="Idade" required/>   
+                        <span class="error" id="ageError">Idade inválida</span>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Senha" pattern="^(?=.*[a-z]).{8,}$" required>
+                        <span class="error" id="senhaError">Senha inválida</span>
+
                         <button id="submit" type="submit" class="btn btn-danger">CADASTRAR-SE</button>
                         
                     </form>
@@ -50,13 +52,8 @@
                           </svg></i> <a href="https://accounts.google.com/v3/signin/identifier?hl=pt-br&ifkv=AaSxoQwBgLtDxdFP29NHApQLb6l8YZrbGyZwOmCmWYZw6vcBllQA_dRVe4BxQ8_uH96GM3dp0uAk&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S2013368236%3A1714449150058459&theme=mn&ddm=0">Continue com o google</a> </button>   
                     </div>
                     <br>
-                    <p> Já possui cadastro? <a href="login.html">Acesse aqui.</a></p>
-                    <!--<div id="storedData" style="display:none;">
-                        <h3>Dados Armazenados</h3>
-                        <p>Nome: <span id="storedName"></span></p>
-                        <p>Email: <span id="storedEmail"></span></p>
-                        <p>Idade: <span id="storedAge"></span></p>
-                    </div>-->
+                    <p> Já possui cadastro? <a href="../../View/login.html">Acesse aqui.</a></p>
+                    
                 </div>
                 
             </div>
@@ -68,10 +65,10 @@
     <footer class=" footer-expand-lg footer-dark bg-dark">
        <p class="flow-text-white">Darkview &copy; 2024</p>
     </footer>
-    <script type="module" src="./cadastro.js"></script>
+    <script type="module" src="../cadastro/cadastro.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script src="../app/index.js" ></script>
+    <script src="./index.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
     
