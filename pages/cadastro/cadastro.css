@@ -1,0 +1,17 @@
+#form-login input:invalid {
+    border: 1px solid red;
+}
+
+#form-login input:valid {
+    border: 1px solid  rgb(238, 242, 245);;
+} 
+
+
+
+input:invalid:not(:placeholder-shown) ~ .error{
+    display: block;
+}
+
+input:valid ~ .error{
+    display: none;
+}

@@ -1,5 +1,5 @@
-import User from "../app/user.js";
-import UserService from "../service/user.service.js";
+import User from "../../model/user.js";
+import UserService from "../../service/user.service.js";
 
 function submitHandler() {
     document.addEventListener('Submit', function(event) {

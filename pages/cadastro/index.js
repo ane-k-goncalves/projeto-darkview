@@ -1,58 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form-login');
+    event.preventDefault();
+    
     const nameInput = document.getElementById('name');
     const emailInput = document.getElementById('email');
     const ageInput = document.getElementById('age');
     const passwordInput = document.getElementById('password');
-    const nameError = document.getElementById('nameError');
-    const emailError = document.getElementById('emailError');
-    const ageError = document.getElementById('ageError');
-    const passwordError = document.getElementById('passwordError');
+    
     const successMessage = document.getElementById('successMessage');
 
-    form.addEventListener('submit', function (event) {
+    document.addEventListener('submit', function (event) {
         event.preventDefault();
         let valid = true;
-
-        // // Validar nome
-        // if (!nameInput.validity.valid) {
-        //     nameError.textContent = getErrorMessage(nameInput);
-        //     nameError.style.display = 'block';
-        //     valid = false;
-        // } else {
-        //     nameError.textContent = '';
-        //     nameError.style.display = 'none';
-        // }
-
-        // // Validar email
-        // if (!emailInput.validity.valid) {
-        //     emailError.textContent = getErrorMessage(emailInput);
-        //     emailError.style.display = 'block';
-        //     valid = false;
-        // } else {
-        //     emailError.textContent = '';
-        //     emailError.style.display = 'none';
-        // }
-
-        // // Validar idade
-        // if (!ageInput.validity.valid) {
-        //     ageError.textContent = getErrorMessage(ageInput);
-        //     ageError.style.display = 'block';
-        //     valid = false;
-        // } else {
-        //     ageError.textContent = '';
-        //     ageError.style.display = 'none';
-        // }
-
-        // // Validar senha
-        // if (!passwordInput.validity.valid) {
-        //   //  passwordError.textContent = getErrorMessage(passwordInput);
-        //     passwordError.style.display = 'block';
-        //     valid = false;
-        // } else {
-        //     passwordError.textContent = '';
-        //     passwordError.style.display = 'none';
-        // }
 
         if (valid) {
             const name = nameInput.value;
@@ -116,5 +74,14 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => {
             console.error('Erro ao salvar dados no servidor:', error);
         });
+    }
+});
+
+
+email.addEventListener('invalid', function (event) {
+    if(email.validity.typeMismatch) {
+        email.setCustomValidity("O email não é válido!")
+    }else {
+        email.setCustomValidity("")
     }
 });

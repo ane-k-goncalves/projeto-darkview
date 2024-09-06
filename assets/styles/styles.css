@@ -123,6 +123,8 @@ h2 {
     flex-wrap: wrap;
     width: 268px;
     justify-content: center;
+  
+
 }
 
 #form-box {
@@ -158,6 +160,11 @@ h2 {
     display: flex;
     justify-content: center;
 
+    
+}
+
+#submit {
+    margin-top: 50px;
     
 }
 
@@ -281,14 +288,15 @@ h2 {
     display: none;
 }
 .success {
-    color: green;
+    color: rgb(219, 229, 236);
     display: none;
 }
 
 #form-login input {
-    margin-bottom: 10px;;
+    margin-bottom: 10px;
+    border: 1px solid #f5eded;
 }
 
-.google .a {
+.google a {
     color: #030b13;
 }
