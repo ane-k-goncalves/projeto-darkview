@@ -16,7 +16,9 @@
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <img src="../../assets/imagens/DARKVIEW.png" alt="Darkview">
+            <div id="anim">
+                <img  src="../../assets/imagens/DARKVIEW.png" alt="Darkview">
+            </div>
         </div>
     </nav>
     </header>
@@ -29,7 +31,7 @@
                         <br>
                     </div>
                 
-                    <form id="form-login" onsubmit="submitHandler()"   novalidate>
+                    <form id="form-login" onsubmit="submitHandler(event)"   novalidate>
                         <input type="name" class="form-control" id="name" name="name" minlength="3" maxlength="50" placeholder="Nome" autofocus pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+" required/>
                         <span class="error" id="nameError">Nome inválido</span>
                         <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required/>

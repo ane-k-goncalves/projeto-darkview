@@ -1,8 +1,8 @@
 import User from "../../model/user.js";
 import UserService from "../../service/user.service.js";
 
-function submitHandler() {
-    document.addEventListener('Submit', function(event) {
+function submitHandler(event) {
+   
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const idade = document.getElementById('age').value;
@@ -19,5 +19,4 @@ function submitHandler() {
             console.error('Error', error);
             alertity.error('Usuário não cadastrado!')
         })
-    })
-}
+    }

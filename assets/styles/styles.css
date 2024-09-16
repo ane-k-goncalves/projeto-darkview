@@ -123,8 +123,17 @@ h2 {
     flex-wrap: wrap;
     width: 268px;
     justify-content: center;
-  
+    cursor: pointer;
 
+}
+
+@keyframes aumentarTamanho {
+    from, to{
+        scale: 100%;
+    }
+    50% {
+        scale: 120%;
+    }
 }
 
 #form-box {
@@ -159,15 +168,20 @@ h2 {
     cursor: pointer;
     display: flex;
     justify-content: center;
-
+    
     
 }
 
 #submit {
     margin-top: 50px;
-    
+    animation: aumentarTamanho 3s linear infinite;
+    border-radius: 10px;
 }
 
+#anim {
+    animation: aumentarTamanho 3s linear infinite;
+    margin: 20px;
+}
 .main-banner {
     background-image: linear-gradient(rgba(0,0,0, 0.8), rgba(0,0,0, 0.8)), url('../imagens/movie-background-collage.jpg');
     background-size: cover;
@@ -258,6 +272,14 @@ h2 {
 
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0%;
+
+}
+
+#movies {
+    flex: 1 1;
+        width: 33.33333333%;
 }
 
 
@@ -277,11 +299,7 @@ h2 {
     text-decoration: none;
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
-    justify-items:flex-end;
-}
+
 
 .error {
     color: red;
@@ -299,4 +317,8 @@ h2 {
 
 .google a {
     color: #030b13;
+}
+
+#pesquisa {
+    width: 350px;
 }
