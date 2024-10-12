@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const directors = credits.crew.filter(member => member.job === 'Director').map(director => director.name).join(', ');
 
         const cardHTML = `
-    
                     <div class="card md-3 h-100" style="width: 25rem; margin: 20px;">
                         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top img-fluid rounded-start" alt="${movie.title}">
                         <div class="card-body">
@@ -77,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const cardElement = document.createElement('movies');
         cardElement.innerHTML = cardHTML;
-        cardElement.className =  'col-lg-4 col-md-6 col-sm-12 mb-3';
+        cardElement.className =  'col-lg-3 col-md-6 col-sm-12 mb-3';
         container.appendChild(cardElement);
     }
 
