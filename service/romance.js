@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const cardElement = document.createElement('movies');
         cardElement.innerHTML = cardHTML;
-        cardElement.className =  'col-lg-4 col-md-6 col-sm-12 mb-3';
+        cardElement.className =  'col-lg-3 col-md-6 col-sm-12 mb-3';
         container.appendChild(cardElement);
     }
 

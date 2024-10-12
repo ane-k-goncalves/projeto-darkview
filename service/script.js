@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const cardHTML = `
             <div class="col-sm-4">
-                <div class="card mb-3 h-100">
+                <div class="card mb-3 h-100 style="width: 500px;"">
                     <div class="row g-0">
                         <div class="col-md-4">
                             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="img-fluid rounded-start" alt="${movie.title}">
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
-        const cardElement = document.createElement('div');
+        const cardElement = document.createElement('aaa');
         cardElement.innerHTML = cardHTML;
         container.appendChild(cardElement);
     }
