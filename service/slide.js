@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const slideClass = isFirstSlide ? 'carousel-item active' : 'carousel-item';
         const slideHTML = `
             <div class="${slideClass}">
-                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="d-block w-100" alt="${movie.title}">
+                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="d-block w-10" alt="${movie.title}">
                 <div class="carousel-caption">
                    
                     <a class="btn btn-dark " href="https://www.themoviedb.org/movie/${movie.id}" role="button">Ver mais</a>

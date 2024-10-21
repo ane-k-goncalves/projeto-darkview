@@ -211,13 +211,6 @@ h2 {
     height: 80px;
 }
 
-.carousel-caption {
-    
-    color: #fff; 
-    padding: 20px; 
-    border-radius: 5px; 
-}
-
 
 
 .slide h2{
@@ -226,62 +219,68 @@ h2 {
     justify-content: center;
 }
 
+.carousel-item img {
+    width: 100vw; /* A imagem ocupa 100% da largura do contêiner */
+    height: 100vh; /* A altura da imagem será 100% da altura da viewport */
+    object-fit: contain; /* A imagem cobre o contêiner mantendo a proporção */
+}
 
+.carousel-caption {
+    margin: 100px;
+    color: #fff; 
+    padding: 10px; 
+    border-radius: 5px;
+}
+
+/* Ajustes para telas pequenas (320px e acima) */
 @media (min-width: 320px) {
+    .carousel-item img {
+        height: 90vh; /* Ajusta a altura para 90% da viewport em telas menores */
+        flex: 1 1 100%; /* Faz o item ocupar 100% da largura disponível */
+    }
 
-    .carousel-item img {
-        margin-top: 40px;
-        object-fit: contain; 
-        width: 600px; /* Ajusta a largura da imagem para 100% do contêiner pai */
-        height: 600px; /* A altura se ajusta automaticamente para manter a proporção */
-         
-    }
     .carousel-caption {
-   
-    color: #fff; 
-    padding: 20px; 
-    border-radius: 5px; 
-}
-}
-@media only screen and (min-width: 768px){
-    .carousel-item img {
-        margin-top: 40px;
-        object-fit: contain; 
-        width: 400px; /* Ajusta a largura da imagem para 100% do contêiner pai */
-        height: 600px;
+        margin: 80px;
+        color: #fff; 
+        padding: 10px; 
+        border-radius: 5px; 
     }
-    .carousel-caption {
-   
-    color: #fff; 
-    padding: 20px; 
-    border-radius: 5px; 
-}
-}
-@media only screen and (min-width: 1200px){
-    .carousel-item img {
-        margin-top: 40px;
-        object-fit: contain; 
-        width: 1000px; /* Ajusta a largura da imagem para 100% do contêiner pai */
-        max-height: 800;
-    }
-    .carousel-caption {
-   
-    color: #fff; 
-    padding: 20px; 
-    border-radius: 5px; 
-}
 }
 
+/* Ajustes para telas médias (768px e acima) */
+@media only screen and (min-width: 768px) {
+    .carousel-item img {
+        height: 95vh; /* Ajusta a altura para 95% da viewport em tablets e telas médias */
+    }
+    .carousel-caption {
+        margin: 100px;
+        color: #fff; 
+        padding: 10px; 
+        border-radius: 5px;  /* Ajusta o tamanho da fonte da legenda */
+    }
+}
+
+/* Ajustes para telas grandes (1200px e acima) */
+@media only screen and (min-width: 1200px) {
+    .carousel-item img {
+        height: 100vh; /* Altura completa da viewport em telas grandes */
+    }
+    .carousel-caption {
+        margin: 150px;
+        color: #fff; 
+        padding: 10px; 
+        border-radius: 5px; 
+}
+}
 
 .container-fluid {
-
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 0%;
-
+    padding: 0; /* Removido o "%" para o padding ser corretamente aplicado como 0 */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
 }
-
 #movies {
     flex: 1 1;
         width: 33.33333333%;
@@ -351,3 +350,13 @@ h2 {
     display:inline;
     margin-left: 200px;
 }
+
+#btn:hover {
+    background-color: rgb(253, 8, 8); 
+    border:  rgb(253, 8, 8);
+} 
+
+#submit:hover {
+    background-color: rgb(253, 8, 8); 
+    border:  rgb(253, 8, 8);
+} 
