@@ -263,15 +263,21 @@ h2 {
 /* Ajustes para telas grandes (1200px e acima) */
 @media only screen and (min-width: 1200px) {
     .carousel-item img {
-        height: 100vh; /* Altura completa da viewport em telas grandes */
+        height: 80vh;
+        width: 150vh;
+        object-fit: fill;
+        
+         /* Altura completa da viewport em telas grandes */
     }
     .carousel-caption {
-        margin: 150px;
+        margin: 20px;
         color: #fff; 
         padding: 10px; 
         border-radius: 5px; 
+    }
+   
 }
-}
+
 
 .container-fluid {
     display: flex;
@@ -360,3 +366,4 @@ h2 {
     background-color: rgb(253, 8, 8); 
     border:  rgb(253, 8, 8);
 } 
+
