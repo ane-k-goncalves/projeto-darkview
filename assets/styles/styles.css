@@ -1,6 +1,6 @@
 
 html, body {
-    height: 80rem;
+    height: 10rem;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -193,7 +193,7 @@ h2 {
     background-position: center;
     position: relative;
     width: 100%;
-    height: 70rem;
+    height: 50em;
 }
 
 .main-banner2 {
@@ -202,7 +202,7 @@ h2 {
     background-position: center;
     position: relative;
     width: 100%;
-    height: 500rem;
+    height: 350rem;
 }
 
 
@@ -235,12 +235,13 @@ h2 {
 /* Ajustes para telas pequenas (320px e acima) */
 @media (min-width: 320px) {
     .carousel-item img {
-        height: 90vh; /* Ajusta a altura para 90% da viewport em telas menores */
+        height: 67vh;
+        width: 100%; /* Ajusta a altura para 90% da viewport em telas menores */
         flex: 1 1 100%; /* Faz o item ocupar 100% da largura disponível */
     }
 
     .carousel-caption {
-        margin: 80px;
+        margin: 5px;
         color: #fff; 
         padding: 10px; 
         border-radius: 5px; 
@@ -250,10 +251,12 @@ h2 {
 /* Ajustes para telas médias (768px e acima) */
 @media only screen and (min-width: 768px) {
     .carousel-item img {
-        height: 95vh; /* Ajusta a altura para 95% da viewport em tablets e telas médias */
+        height: 65vh;
+        width: 80vh; 
+        object-fit: fill; /* Ajusta a altura para 95% da viewport em tablets e telas médias */
     }
     .carousel-caption {
-        margin: 100px;
+        margin: 0px;
         color: #fff; 
         padding: 10px; 
         border-radius: 5px;  /* Ajusta o tamanho da fonte da legenda */
@@ -263,14 +266,14 @@ h2 {
 /* Ajustes para telas grandes (1200px e acima) */
 @media only screen and (min-width: 1200px) {
     .carousel-item img {
-        height: 80vh;
-        width: 150vh;
+        height: 85vh;
+        width: 100vh;
         object-fit: fill;
         
          /* Altura completa da viewport em telas grandes */
     }
     .carousel-caption {
-        margin: 20px;
+        margin: 0px;
         color: #fff; 
         padding: 10px; 
         border-radius: 5px; 
