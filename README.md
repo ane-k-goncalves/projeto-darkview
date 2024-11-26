@@ -10,7 +10,7 @@ Este projeto tem como objetivo implementar progressivamente e de forma didática
 
 ## Protótipo
 
-https://www.figma.com/file/6sy0vr7IkP4nem7Xo3Z0D6/Untitled?type=design&node-id=0-1&mode=design&t=rS9XMUdcdnT8IU2i-0
+https://www.figma.com/design/6sy0vr7IkP4nem7Xo3Z0D6/Untitled?node-id=3-321&t=7q7rV9cdW8gYYFgl-1
 
 ## Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
