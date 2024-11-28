@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top img-fluid rounded-start" style=" object-fit: cover; heigh: 50% " alt="${movie.title}">
                         <div class="card-body">
                             <h5 class="card-title" style="color: white">${movie.title}</h5>
-                            <p class="card-text">
+                            <p class="card-text" style="overflow: hidden; height: 10rem;">
                                 Data Lançamento: ${movie.release_date} <br>
                                 Gênero: ${genres} <br>
                                 Duração: ${duration} <br>
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const cardElement = document.createElement('movies');
         cardElement.innerHTML = cardHTML;
-        cardElement.className = 'col-lg-3 col-md-6 col-sm-12 mb-3';
+        cardElement.className = 'col-lg-3 col-md-6 col-sm-12 mb-3 mt-3';
         container.appendChild(cardElement);
     }
 

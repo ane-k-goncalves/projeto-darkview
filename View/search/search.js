@@ -14,16 +14,15 @@
     
             const data = await response.json();
             const resultadosContainer = document.getElementById('resultados');
-            resultadosContainer.innerHTML = '';  // Limpa os resultados anteriores
+            resultadosContainer.innerHTML = ''; 
     
-            // Itera sobre os resultados e cria cards para cada filme
             data.results.forEach(movie => {
                 const card = document.createElement('div');
                 card.classList.add('card', 'm-2');
                 card.style.width = '18rem';
                 card.style.height = '26rem';
                 card.style.margin = '10px';
-                // Exemplo de conteúdo do card
+             
                 card.innerHTML = `
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top" alt="${movie.title}">
                     <div class="card-body">
