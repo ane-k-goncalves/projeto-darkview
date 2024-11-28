@@ -31,12 +31,12 @@
                         <br>
                     </div>
                 
-                    <form id="form-login" onsubmit="submitHandler(event)"   novalidate>
+                    <form id="form-login"  novalidate>
                         <input type="name" class="form-control" id="name" name="name" minlength="3" maxlength="50" placeholder="Nome" autofocus pattern="^(\s?[A-ZÀ-Ú][a-zà-ú]*)+(\s[a-zà-ú]*)?(\s[A-ZÀ-Ú][a-zà-ú]*)+" required/>
                         <span class="error" id="nameError">Nome inválido</span>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required/>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" required/>
                         <span class="error" id="emailError">Email inválido</span>
-                        <input type="text" class="form-control" id="date" name="birthdate" placeholder="Data de Nascimento" required />
+                        <input type="text" class="form-control" id="age" name="birthdate" placeholder="Data de Nascimento" required />
                         <span class="error" id="ageError">Idade inválida</span>
                         <input type="password" class="form-control" id="password" name="password" placeholder="Senha" pattern="^(?=.*[a-z]).{8,}$" required>
                         <span class="error" id="senhaError">Senha inválida</span>

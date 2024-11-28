@@ -7,7 +7,7 @@ document.getElementById('form-box').addEventListener('submit', function(event) {
 
 
 
-    fetch(`http://localhost:3000/users?email=${email}&password=${senha}`, {
+    fetch(`http://localhost:3001/users?email=${email}&password=${senha}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json'
